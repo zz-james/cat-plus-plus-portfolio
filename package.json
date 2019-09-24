@@ -1,0 +1,21 @@
+{
+  "scripts": {
+    "build": "npm run js && npm run static",
+    "js": "npx rollup -c",
+    "static": "rsync -rm ./static dist",
+    "test": "npm run js && node test/tests.js"
+  },
+  "dependencies": {
+    "riot": "^4.6.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "@riotjs/compiler": "^4.4.3",
+    "rimraf": "^3.0.0",
+    "rollup": "^1.21.4",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-riot": "^4.0.0"
+  }
+}
