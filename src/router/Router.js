@@ -17,7 +17,6 @@ export default class Router {
     }) + '(?:\/|$)'
 
     let params = {};
-    // match the requested path with the regex
     let routeMatch = requestPath.match(new RegExp(requestPath));
     if(routeMatch !== null) {
       params = routeMatch
