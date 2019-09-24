@@ -14,7 +14,7 @@ export default class Router {
     let regexPath = route.path.replace(/([:*])(\w+)/g, (full, colon, name) => {
       paramNames.push(name);
       return '([^\/]+)';
-    }) + '(?:\/|$)';
+    }) + '(?:\/|$)'
 
     let params = {};
     // match the requested path with the regex
@@ -38,10 +38,9 @@ export default class Router {
     const route = this.routes.filter(route => this.match(route, path))[0];
     if(!route) this.renderNode.innerHTML = '404! Page not found';
     else {
+      console.log(path);
       window.location.href = path.search('/#') === -1 ? '#' + path : path;
-      this.renderNode.innerHTML = route.renderView(); // innerHTML avoided
+      this.renderNode.innerHTML = route.renderView(); // innerHTML must be avoided
     }
   }
-
-
 }
